@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <style>
+
+
+      body {
+        align-items: center;
+        align-content: center;
+        align-self: center;
+        background-image: url("https://1.bp.blogspot.com/-bw0PKhvIlwk/YMmt__ilfqI/AAAAAAAAFdA/oa4t0m6Az-ETS75sjaqI9kYDuKUH0W5dACLcBGAsYHQ/s16000/car-5591459_1280.jpg");
+        background-color: rgba(255,255,255,0.7);
+        background-blend-mode: lighten;
+
+        text-align: center;
+        padding-left: 22%;
+        padding-right:22%;
+        height:fit-content;
+        width: 100%;
+        overflow: hidden;
+      }
+    </style>
+    <title>login</title>
+  </head>
+  <body>
+    <br>
+    <h2>LOGIN HERE!</h2>
+    <div class="w3-margin-bottom w3-center"> 
+      <form  method="POST" action="Login">
+      {% csrf_token %}  
+        <!-- <div class="w3-margin-bottom w3-center"> -->
+        <ul class="w3-ul w3-center" style="background-color: white">
+
+      <li><b>USERNAME</b></li>
+      <li><input style="width: 195px;" style="padding: auto;" type="text" name="username" /></li>
+      <li><b>PASSWORD</b></li><br>
+      <li><input style="width: 195px;" style="padding: auto;" type="password" name="password" /></li>
+      <!-- <p>Mobile Number:</p>
+      <input type="number" name="phone" /><br /> -->
+      <li><input type="submit" /></li>
+      <li><button><a href="{% url 'register' %}" style="padding: 3px; text-decoration: none;" >Back</a></button>
+          {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+     </li>
+      </ul>
+      <!-- </div> -->
+      </form>
+    </div> 
+    
+   
+
+  </body>
+</html>

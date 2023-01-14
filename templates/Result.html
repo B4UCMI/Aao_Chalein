@@ -1,0 +1,100 @@
+<!-- {% block content %}
+
+{% for x in data %}
+<p>Name:</p>
+{{x.name}}<br>
+<p>Hall:</p>
+{{x.hall}}<br>
+<p>Date:</p>
+{{x.date}}<br>
+<p>Time:</p>
+{{x.time}}<br>
+<p>Boarding Location:</p>
+{{x.Blocation}}<br>
+<p>Destination:</p>
+{{x.Dlocation}}
+{% endfor %}
+
+{% endblock content %} -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-image: url("https://1721181113.rsc.cdn77.org/data/images/full/37656/close-up-shot-of-white-toy-angry-robot.jpg");
+        background-color: rgba(255, 255, 255, 0.5);
+        background-blend-mode: lighten;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .container {
+        align-items: center;
+
+        align-content: center;
+        text-align: center;
+        align-self: center;
+      }
+    </style>
+    <title>result</title>
+  </head>
+  <body>
+    <button class="logout">
+      <a href="Login" style="color: rgb(126, 104, 104); text-decoration: none"
+        >Logout</a
+      >
+    </button>
+    <div class="container">
+      <table
+        class="table table-striped"
+        style="
+          border: 0px solid black;
+          background-color: beige;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 60px 60px 60px 60px;
+          margin-top: 5px !important;
+        "
+      >
+        <thead>
+          <tr style="align-items: center">
+            <th>NAME&nbsp;&nbsp;&nbsp;<w</th>
+            &nbsp;
+            <th>FROM LOCATION&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            &nbsp;&nbsp;
+            <th>TO LOCATION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th>CITY FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th>CITY TO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th>HALL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <!-- <th>DATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> -->
+            <!-- <th>TIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> -->
+            <th>
+              DATE-TIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </th>
+            <th>
+              CONTACT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for x in data %}
+          <tr>
+            <td>{{x.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{x.Blocation}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{x.Dlocation}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{x.cityfrom}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{x.cityto}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{x.hall}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <!-- <td>{{x.date}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> -->
+            <!-- <td>{{x.time}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> -->
+            <td>{{x.comtime}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{x.phone}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

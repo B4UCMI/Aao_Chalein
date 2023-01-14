@@ -1,0 +1,226 @@
+<!-- {% load static %}
+<link rel="stylesheet" href="{% static 'style1.css' %}" /> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      var input = document.getElementById("date").value;
+      var d = new Date(input);
+
+      if (!!d.valueOf()) {
+        year = d.getFullYear();
+        month = d.getMonth() + 1;
+        day = d.getDate();
+
+        // TODO
+      } else {
+        // TODO
+      }
+    </script>
+    <style>
+      body {
+        background-image: url("https://www.simplilearn.com/ice9/free_resources_article_thumb/How_AIandAutomation_arechanging_the_nature_of_work.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(255, 255, 255, 0.41);
+        background-blend-mode: lighten;
+        height:fit-content;
+        width: 100%;
+      }
+      .cont {
+        text-align: center;
+      }
+      .save {
+        display: flex;
+        flex-direction: row;
+        padding: 15px 100px;
+        height: 310px;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+    </style>
+    <title>Save</title>
+  </head>
+  <body>
+
+
+<a><button class="logout" style="align-self: flex-start">
+        <a
+          href="Login"
+          style="
+            color: rgb(126, 104, 104);
+            text-decoration: none;
+            text-align: left;
+          "
+          >Logout</a
+        >
+      </button></a
+    >
+
+   <h1 style="text-align: center"><b>ENTER YOUR JOURNEY DETAILS</b></h1>
+
+   <br>
+   <br>
+   <br>
+   <br>
+   
+  <div class="w3-row-padding  w3-padding-8 w3-container" >
+        <form method="POST" action="{%url 'saver'%}">
+          {% csrf_token %}
+
+     
+      <div class="w3-half  w3-margin-bottom " class="save">
+
+              <ul class="w3-ul  w3-center "  style="background-color:powderblue; padding:10px; padding-bottom: 20px; padding-top:15px" >
+    
+                <li>
+                  NAME<br />
+                  <input
+                    style="width: 255px; padding: 3px"
+                    type="text"
+                    name="name"
+                    placeholder="Enter Your Name"
+                    required
+                  />
+                </li>
+                <li>
+                  HALL<br />
+                  <input
+                    style="width: 255px; padding: 3px"
+                    type="number"
+                    name="hall"
+                    placeholder="Enter Your Hall"
+                    required
+                  />
+                </li>
+                <li>
+                  DATE<br />
+                  <input
+                    style="width: 255px; padding: 3px"
+                    type="date"
+                    name="date"
+                    id="date"
+                    placeholder="Enter Your Journey Date"
+                    required
+                  />
+                </li>
+                <li>
+                  TIME<br />
+                  <input
+                    style="width: 255px; padding: 3px"
+                    type="time"
+                    name="time"
+                    placeholder="Enter Your Journey Time"
+                    required
+                  />
+                </li>
+                <li>
+                  FROM LOCATION<br />
+                  <select
+                    style="width: 255px; padding: 3px"
+                    name="Blocation"
+                    id=""
+                    required
+                  >
+                    <option value="" disabled selected hidden>
+                      Choose your Boarding Location
+                    </option>
+                    <option value="CNB">CNB</option>
+                    <option value="IIT Kanpur">IIT Kanpur</option>
+                  </select>
+                </li>
+                                <li>
+                  TO LOCATION<br />
+                  <select
+                    style="width: 255px; padding: 3px"
+                    name="Dlocation"
+                    id=""
+                    required
+                  >
+                    <option value="" disabled selected hidden>
+                      Choose your Destination
+                    </option>
+                    <option value="CNB">CNB</option>
+                    <option value="IIT Kanpur">IIT Kanpur</option>
+                  </select>
+                </li>
+                </ul>
+               </div>
+              
+            
+    
+
+      <div class="w3-half w3-margin-bottom" class="save">     
+       
+
+           
+        
+          
+               <ul class="w3-ul  w3-center "  style="background-color:powderblue; padding:10px; padding-top:15px; padding-bottom: 14px;" >
+                
+                <li>
+                  CITY FROM<br />
+                  <input
+                    style="width: 255px; padding: 3px"
+                    type="text"
+                    name="cityfrom"
+                    placeholder="Starting location city"
+                  />
+                </li>
+                <li>
+                  CITY TO<br />
+                  <input
+                    style="width: 255px; padding: 3px"
+                    type="text"
+                    name="cityto"
+                    placeholder="Final location city"
+                  />
+                </li>
+                <li>
+                  CONTACT<br />
+                  <input
+                    style="width: 255px; padding: 3px"
+                    type="text"
+                    name="phone"
+                    placeholder="Email ID/Mobile Number"
+                    required
+                  /><br />
+                </li>
+                <li>
+                  COMMENTS<br />
+                  <input
+                    style="width: 255px; padding: 3px"
+                    type="text"
+                    name="comment"
+                    placeholder="Add comments (if any)"
+                  />
+                </li>
+                <br>
+            <br>
+                <li> <input style="width: 80px; padding: 6px" type="submit" /></li>
+                <li><button>
+        <a href="{% url 'dash' %}" style="text-decoration: none">Back</a>
+      </button></li>
+                </ul>
+                </div>
+              
+                
+            
+              
+        
+ </form>
+
+ </div>
+  </body>
+</html>
